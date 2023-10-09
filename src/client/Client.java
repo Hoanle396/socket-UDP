@@ -32,13 +32,13 @@ public class Client extends JFrame {
 
 				// Receive response from server
 				socket.receive(responsePacket);
-				String[] responseMessage = new String(responsePacket.getData(), 0, responsePacket.getLength()).split(";");
-	            String tokyo= responseMessage[0];
-	            String paris= responseMessage[1];
-	            String seoul= responseMessage[2];
-	            String date= responseMessage[3];
-	            System.out.println(tokyo+""+paris+""+seoul+""+date);           
-               
+				String[] responseMessage = new String(responsePacket.getData(), 0, responsePacket.getLength())
+						.split(";");
+				String tokyo = responseMessage[0];
+				String paris = responseMessage[1];
+				String seoul = responseMessage[2];
+				String date = responseMessage[3];
+				System.out.println(tokyo + "" + paris + "" + seoul + "" + date);
 
 				// Sleep for the specified interval before sending the next request
 				Thread.sleep(REQUEST_INTERVAL_MS);
@@ -47,7 +47,6 @@ public class Client extends JFrame {
 			e.printStackTrace();
 		}
 	}
-
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> {
